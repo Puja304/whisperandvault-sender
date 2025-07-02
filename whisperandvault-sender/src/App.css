@@ -1,0 +1,206 @@
+/* Toggle button */
+*{
+  margin:0%;
+  padding: 0%;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 1rem;
+  left: 57rem;
+  width: 4rem;
+  height: 2rem;
+  background-color: #ccc;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button.whisper {
+  background-color: #fef3f7;
+}
+
+.toggle-button.vault {
+  background-color: #c5c5c5;
+}
+
+.toggle-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button.vault .toggle-circle {
+  transform: translateX(2rem);
+}
+
+
+
+/* Background and titles */
+.whisper-page{
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(-45deg,
+    #f8c8dc,   /* ballet pink */
+    #ef9aa8,   /* dusty rose */
+    #e6a8d7,   /* orchid */
+    #d48ab3,   /* mauve pink */
+    #f2b5d4,   /* cherry blossom */
+    #f8c8dc    /* repeat to loop nicely */
+  );
+
+  background-size: 500% 500%;
+  animation: gradientFlow 15s ease infinite;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.whisper-title{
+  margin-top: 8rem;
+  font-family: Quicksand;
+  font-size: 4rem;
+  text-align: center;
+  color: #EAEAEA;
+  font-weight: 500;
+  text-shadow:
+    0 0 8px rgba(0, 0, 0, 0.35),     /* stronger shadow glow */
+}
+
+
+.vault-page{
+  height: 100vh;
+  width: 100vw;
+  background-color: #1A1A1A;
+  color: #F2F2F2;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vault-title{
+  margin-top: 8rem;
+  font-family: Space Grotesk;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 500;
+  text-shadow:
+    0 0 8px rgba(0, 0, 0, 0.35),     /* stronger shadow glow */
+}
+
+
+
+
+
+
+
+/* User details */
+
+.user-details{
+  margin-top: 12rem;
+}
+
+.user-name-prompt{
+  display: flex;
+  flex-direction: column;
+  font-family: Inter;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  gap: 0.5rem;
+}
+
+.user-name-prompt input{
+  height: 2rem;
+  width: 16rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  border: none;
+  font-family: playfair display;
+  box-shadow:
+  0 1px 2px rgba(255, 255, 255, 0.06),  /* subtle ambient top glow */
+  0 2px 4px rgba(0, 0, 0, 0.3),         /* soft lift */
+  0 1px 25px rgba(174, 174, 174, 0.6);       /* long depth shadow */
+}
+
+.user-name-prompt input:focus{
+  outline: none;
+  box-shadow:
+    0 0 10px rgba(0, 229, 255, 0.6),   /* vibrant cyan glow */
+    0 0 20px rgba(124, 255, 203, 0.5), /* minty green glow */
+    0 0 30px rgba(0, 229, 255, 0.4),   /* outer spread glow */
+    0 8px 16px rgba(0, 0, 0, 0.1);     /* lifted shadow */
+  transform: translateY(-1px);
+}
+
+.anonymity-choice{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.anonymity-choice p,label{
+  margin-top: 2rem;
+  font-family: Inter;
+  color: white;
+  font-weight: 600;
+}
+
+.anonymity-choice label{
+  display: flex;
+  gap: 1rem
+}
+
+
+
+
+
+
+/* Submit div - back and next buttons */
+
+.submit-div{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.submit-div button{
+  background-color: #EAEAEA;
+  border: none;
+  font-family: Inter;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.submit-div button:hover{
+  transform: translateY(0.2rem);
+}
+
+
+
+.back-invisible{
+  display: none;
+}

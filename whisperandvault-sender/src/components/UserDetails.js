@@ -9,7 +9,7 @@ const UserDetails = (props) => {
       <form className='user-detail-form' onSubmit={(e) => {
                                         e.preventDefault();
                                         }}>
-        <label className='user-name-prompt'>
+        <label className='text-input'>
           Sender Name
           <input 
           type="text"

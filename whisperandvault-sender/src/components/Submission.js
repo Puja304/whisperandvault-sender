@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Waiting from './Waiting'
+import Error from './Error'
+import Success from './Success'
 
-const Submission = (props) => {
-  let details = props.details
+const Submission = ({details}) => {
+  const [status, setStatus] = useState("waiting")
     return (
-    <div>Submission</div>
+      <>
+      {status == "waiting" && <Waiting details={details} setStatus={setStatus}/>}
+      {status == "error" && <Error/>}
+      {status == "success" && <Success/>}
+      </> 
   )
 }
 

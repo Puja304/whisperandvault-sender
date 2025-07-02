@@ -3,17 +3,18 @@ import React from 'react'
 import { useState } from 'react'
 import UserDetails from './UserDetails'
 import RecepientDetails from './RecepientDetails'
-import Limits from './Limits'
 import Message from './Message'
 import Extra from './Extra'
 
 const Whisper = (props) => {
 
+
   let setMode = props.setMode;
   let setDetails = props.setDetails
-  const formTypes = ['user-details', 'recepient-details','limits','message','extra'];
+  const formTypes = ['user-details', 'recepient-details','message','extra'];
   const [formNum, setFormNum] = useState(0);
   const [formType, setFormType] = useState(formTypes[formNum]);
+  const [submitError, setSubmitError] = useState(false);
 
   const handleFormUser = () => {
     setDetails(prevDetails => ({
@@ -31,26 +32,20 @@ const Whisper = (props) => {
         }));
   };
 
-    const handleFormLimit = () => {
-    setDetails(prevDetails => ({
-        ...prevDetails,
-        retry: props.retry,
-        views: props.views
-        }));
-  };
-
     const handleFormMessage = () => {
     setDetails(prevDetails => ({
         ...prevDetails,
         message: props.message,
+        password: props.password
         }));
   };
 
-    const handleFormPasswordExtra = () => {
+    const handleFormExtra = () => {
     setDetails(prevDetails => ({
         ...prevDetails,
-        password: props.password,
-        extra: props.extra
+        extra: props.extra,
+        views: props.views,
+        retries:props.retry
         }));
   };
 
@@ -64,18 +59,29 @@ const Whisper = (props) => {
       handleFormRecepient();
     }
     else if (formNum == 2){
-      handleFormLimit();
-    }
-    else if (formNum == 3){
       handleFormMessage();
     }
     else{
-      handleFormPasswordExtra();
+      handleFormExtra();
     }
 
-    if (formNum == 4)
+    if (formNum == 3)
     {
-      setMode('submission')
+      if (
+      props.password !== "" &&
+      props.message !== "" &&
+      props.username !== "" &&
+      props.recepient !== "" &&
+      props.email !== ""
+      ){
+        setMode('submission')
+      }
+      else{
+          setSubmitError(true);
+          setTimeout(() => {
+            setSubmitError(false);
+          },3000);
+      }
     }
     else{
 
@@ -95,20 +101,28 @@ const Whisper = (props) => {
 
   return (
     <div className='whisper-page'>
-      <div className="whisper-title">whisper</div>
+      <div className="whisper-title">
+        <p>whisper</p>
+        <p className='whisper-tag'>where cherished moments stay between you and them</p>
+
+      </div>
       <div className='whisper-forms'>
         <div className='whisper-form'>
           {formType == 'user-details' && <UserDetails username={props.username} setUsername={props.setUsername} anonymity={props.anonymity} setAnonymity={props.setAnonymity}/>}
           {formType == 'recepient-details' && <RecepientDetails recepient={props.recepient} setRecepient={props.setRecepient} email={props.email} setEmail={props.setEmail}/>}
-          {formType == 'limits' && <Limits setDetails={setDetails}/>}
-          {formType == 'message' && <Message setDetails={setDetails}/>}
-          {formType == 'extra' && <Extra setDetails={setDetails}/>}
+          {formType == 'message' && <Message message={props.message} setMessage={props.setMessage} password={props.password} setPassword={props.setPassword}/>}
+          {formType == 'extra' && <Extra mode={props.mode} extra={props.extra} setExtra={props.setExtra} views={props.views} setViews={props.setViews} retry={props.retry} setRetry={props.setRetry}/>}
         </div>
         <div className='submit-div'>
           <button className={(formNum > 0) ? 'back-button' : 'back-invisible'} onClick={handleBackButton}>Back</button>
-          <button className='submit-button' onClick={handleFormButton}>{formNum == 4 ? "Submit" : "Next"}</button>
+          <button className='submit-button' onClick={handleFormButton}>{formNum == 3 ? "Submit" : "Next"}</button>
         </div>
       </div>
+        {submitError && (
+            <div className='error-popup'>
+                All text fields must have a value unless marked optional
+            </div>
+        )}
     </div>
   )
 }

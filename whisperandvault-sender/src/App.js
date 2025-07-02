@@ -9,8 +9,8 @@ function App() {
   const [details, setDetails] = useState({
     name:"",
     anonymity:true,
-    recepient_name:"",
-    recepient_email:"",
+    recepient:"",
+    email:"",
     retries:-1,
     views: -1,
     message:"",
@@ -42,8 +42,8 @@ function App() {
             <div className="toggle-circle"></div>
           </div>
 
-          {mode === 'whisper' && <Whisper setMode={setMode} setDetails={setDetails} setUsername={setUsername} setAnonymity={setAnonymity} setRecepient={setRecepient} setEmail={setEmail} setRetry={setRetry} setViews={setViews} setMessage={setMessage} setPassword={setPassword} setExtra={setExtra} username={username} anonymity={anonymity} recepient={recepient} email={email} retry={retry} views={views} message={message} password={password} extra={extra}/>}
-          {mode === 'vault' && <Vault setMode={setMode} setDetails={setDetails} setUsername={setUsername} setAnonymity={setAnonymity} setRecepient={setRecepient} setEmail={setEmail} setRetry={setRetry} setViews={setViews} setMessage={setMessage} setPassword={setPassword} setExtra={setExtra} username={username} anonymity={anonymity} recepient={recepient} email={email} retry={retry} views={views} message={message} password={password} extra={extra}/>}
+          {mode === 'whisper' && <Whisper mode={mode} setMode={setMode} setDetails={setDetails} setUsername={setUsername} setAnonymity={setAnonymity} setRecepient={setRecepient} setEmail={setEmail} setRetry={setRetry} setViews={setViews} setMessage={setMessage} setPassword={setPassword} setExtra={setExtra} username={username} anonymity={anonymity} recepient={recepient} email={email} retry={retry} views={views} message={message} password={password} extra={extra}/>}
+          {mode === 'vault' && <Vault mode={mode} setMode={setMode} setDetails={setDetails} setUsername={setUsername} setAnonymity={setAnonymity} setRecepient={setRecepient} setEmail={setEmail} setRetry={setRetry} setViews={setViews} setMessage={setMessage} setPassword={setPassword} setExtra={setExtra} username={username} anonymity={anonymity} recepient={recepient} email={email} retry={retry} views={views} message={message} password={password} extra={extra}/>}
         </>
       ) : (
         <Submission details={details} />

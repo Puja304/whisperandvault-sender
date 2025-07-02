@@ -87,7 +87,11 @@
     0 0 8px rgba(0, 0, 0, 0.35),     /* stronger shadow glow */
 }
 
-
+.whisper-tag{
+  font-size: 1.5rem;
+  font-family: Quicksand;
+  font-weight: 300;
+}
 .vault-page{
   height: 100vh;
   width: 100vw;
@@ -109,19 +113,16 @@
     0 0 8px rgba(0, 0, 0, 0.35),     /* stronger shadow glow */
 }
 
-
-
-
-
-
-
-/* User details */
-
-.user-details{
-  margin-top: 12rem;
+.vault-tag{
+  font-size: 1.5rem;
+  font-family: Space Mono;
+  font-weight: 300;
 }
 
-.user-name-prompt{
+
+/* Text Inputs */
+
+.text-input{
   display: flex;
   flex-direction: column;
   font-family: Inter;
@@ -130,7 +131,7 @@
   gap: 0.5rem;
 }
 
-.user-name-prompt input{
+.text-input input,textarea{
   height: 2rem;
   width: 16rem;
   padding: 0.75rem 1rem;
@@ -144,7 +145,7 @@
   0 1px 25px rgba(174, 174, 174, 0.6);       /* long depth shadow */
 }
 
-.user-name-prompt input:focus{
+.text-input input:focus,textarea:focus{
   outline: none;
   box-shadow:
     0 0 10px rgba(0, 229, 255, 0.6),   /* vibrant cyan glow */
@@ -153,6 +154,16 @@
     0 8px 16px rgba(0, 0, 0, 0.1);     /* lifted shadow */
   transform: translateY(-1px);
 }
+
+
+
+
+/* User details */
+
+.user-details{
+  margin-top: 12rem;
+}
+
 
 .anonymity-choice{
   display: flex;
@@ -180,6 +191,7 @@
 /* Submit div - back and next buttons */
 
 .submit-div{
+  margin-top: 1rem;
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -188,7 +200,8 @@
 
 
 .submit-div button{
-  background-color: #EAEAEA;
+  background-color: white;
+  min-width: 5rem;
   border: none;
   font-family: Inter;
   padding: 1rem;
@@ -199,8 +212,251 @@
   transform: translateY(0.2rem);
 }
 
-
-
 .back-invisible{
   display: none;
+}
+
+
+
+
+/* Recepient Details */
+.recepient-section{
+  margin-top: 12rem;
+}
+
+.recepient-form{
+  display: flex;
+  flex-direction: column;
+  color:white;
+}
+
+
+
+
+
+
+/* Message + Passwords Section */
+
+.message-section{
+  margin-top: 12rem;
+}
+
+.message-form textarea{
+  height: 10rem;
+  width: 30rem;
+  overflow: auto;
+  resize: none;
+}
+
+.message-form input{
+  width: 30rem;
+}
+
+
+
+/* Extra Section */
+.extra-section{
+  margin-top: 12rem;
+}
+
+.extra-section textarea{
+  height: 5rem;
+  width: 32rem;
+  text-align: top;
+  overflow: auto;
+  resize: none;
+}
+
+.retry-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.retry-label select{
+  width: 7rem;
+  border: none;
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-family: Manrope;
+}
+
+.vault-invisible{
+  display: none;
+}
+
+
+
+
+
+/* Submit error */
+.error-popup {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4d4d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  z-index: 1000;
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOutBottom {
+  0%   { opacity: 0; transform: translate(-50%, 10px); }
+  10%  { opacity: 1; transform: translate(-50%, 0); }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 10px); }
+}
+
+
+
+
+
+/* Sending Page */
+
+.loading-page{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-block{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-message{
+    color: #333;
+    font-family: Quicksand;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.loading-animation{
+    width: 20rem;
+}
+
+
+.w-and-v-light-bg{
+    display: flex;
+    gap: 2rem;
+    font-size: 1.25rem;
+    justify-content: center;
+}
+
+.whisper-light-bg{
+    font-family: Manrope;
+    font-weight: 200;
+    color: black; /*#FFFFFF */
+}
+.and-light-bg{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    padding-top: 0.5rem;
+    color: black; /*#CCCCCC*/
+}
+
+.vault-light-bg{
+    font-family: IBM Plex Sans;
+    font-weight: 500;
+    color: black; /*#999999 */
+    /* either these colors or the ones commented beside them */
+
+}
+
+
+
+
+/* Error page */
+.error-page{
+    background-color: #1A1A1A;   
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.w-and-v-dark-bg{
+    display: flex;
+    gap: 2rem;
+    font-size: 2.5rem;
+}
+
+.whisper-dark-bg{
+    font-family: Manrope;
+    font-weight: 200;
+    color: #F2F2F2; /*#FFFFFF */
+}
+.and-dark-bg{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    padding-top: 1rem;
+    color: #F2F2F2; /*#CCCCCC*/
+}
+
+.vault-dark-bg{
+    font-family: IBM Plex Sans;
+    font-weight: 500;
+    color: #F2F2F2; /*#999999 */
+    /* either these colors or the ones commented beside them */
+
+}
+
+.inform-div{
+    color: #F2F2F2;
+    text-align: center;
+    width: 60%;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.inform-error{
+    color: #F2F2F2;
+    font-family: Manrope;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+    font-size: 3rem;
+}
+
+.inform-details{
+    margin-top: 1rem;
+    font-family: Inter;
+    font-weight: 200;
+    letter-spacing: 0.3rem;
+}
+
+
+
+
+/* Success Page */
+
+.success-page{
+    background-color: #1A1A1A;   
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.success-animation{
+  width: 9rem;
 }

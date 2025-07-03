@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import UserDetails from './UserDetails'
 import RecepientDetails from './RecepientDetails'
 import Message from './Message'

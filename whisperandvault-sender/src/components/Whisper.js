@@ -126,7 +126,6 @@ const Whisper = (props) => {
           {formType == 'message' && <Message message={props.message} setMessage={props.setMessage} password={props.password} setPassword={props.setPassword}/>}
           {formType == 'extra' && <Extra mode={props.mode} extra={props.extra} setExtra={props.setExtra} views={props.views} setViews={props.setViews} retry={props.retry} setRetry={props.setRetry}/>}
         </div>
-        <div className='spacer'></div>
         <div className='submit-div'>
           <button className={(formNum > 0) ? 'back-button' : 'back-invisible'} onClick={handleBackButton}>Back</button>
           <button className='submit-button' onClick={handleFormButton}>{formNum == 3 ? "Submit" : "Next"}</button>

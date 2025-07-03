@@ -139,7 +139,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 
@@ -277,7 +276,7 @@
 /* Message + Passwords Section */
 
 .message-section{
-  margin-top: 12rem;
+  margin-top: 8rem;
 }
 
 .message-form textarea{
@@ -291,15 +290,9 @@
   width: 30rem;
 }
 
-.spacer{
-  height: 3rem;
-  margin-bottom: 8rem;
-}
-
-
 /* Extra Section */
 .extra-section{
-  margin-top: 12rem;
+  margin-top: 7rem;
 }
 
 .extra-section textarea{

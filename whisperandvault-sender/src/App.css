@@ -126,7 +126,6 @@
   width: 60rem;
   /* border: solid black 2px; */
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }

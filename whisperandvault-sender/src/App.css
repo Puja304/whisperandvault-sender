@@ -278,7 +278,6 @@
 
 .message-section{
   margin-top: 12rem;
-  padding-bottom: 8%;
 }
 
 .message-form textarea{
@@ -292,6 +291,9 @@
   width: 30rem;
 }
 
+.spacer{
+  height: 3rem;
+}
 
 
 /* Extra Section */

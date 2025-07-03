@@ -108,8 +108,8 @@ const Whisper = (props) => {
         retries:-1
         }));
 
-        props.setRetry(1);
-        props.setViews(1);
+        props.setRetry(-1);
+        props.setViews(-1);
     }, [])
 
   return (

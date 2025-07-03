@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/whisperandvault-sender/static/css/main.2ce43ca3.css",
-    "main.js": "/whisperandvault-sender/static/js/main.5c3c8793.js",
+    "main.css": "/whisperandvault-sender/static/css/main.45fbebef.css",
+    "main.js": "/whisperandvault-sender/static/js/main.3a30918e.js",
     "index.html": "/whisperandvault-sender/index.html",
-    "main.2ce43ca3.css.map": "/whisperandvault-sender/static/css/main.2ce43ca3.css.map",
-    "main.5c3c8793.js.map": "/whisperandvault-sender/static/js/main.5c3c8793.js.map"
+    "main.45fbebef.css.map": "/whisperandvault-sender/static/css/main.45fbebef.css.map",
+    "main.3a30918e.js.map": "/whisperandvault-sender/static/js/main.3a30918e.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ce43ca3.css",
-    "static/js/main.5c3c8793.js"
+    "static/css/main.45fbebef.css",
+    "static/js/main.3a30918e.js"
   ]
 }

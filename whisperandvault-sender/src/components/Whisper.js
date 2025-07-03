@@ -99,6 +99,19 @@ const Whisper = (props) => {
     }
   }
 
+    //set max views to unlimited and ttl to 30 for all messages sent through whisper
+    useEffect(() => {
+        setDetails(prevDetails => ({
+        ...prevDetails,
+        views: -1,
+        ttl:30,
+        retries:-1
+        }));
+
+        props.setRetry(1);
+        props.setViews(1);
+    }, [])
+
   return (
     <div className='whisper-page'>
       <div className="whisper-title">
